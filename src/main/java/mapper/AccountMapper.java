@@ -13,9 +13,9 @@ import java.util.List;
 public interface AccountMapper {
     @Named("toDto")
     AccountDTO mapToDTO(Account account);
-    @Mapping(source = "id", target = "AccountId")
-    @Mapping(source = "customer.dateOfBirth", target = "dateOfBirth")
-    Account maptoEntity (AccountDTO accountDTO); //принимает ДТО и превращает в ентити
+    @Mapping(source = "id", target = "id")
+    //@Mapping(source = "customer.dateOfBirth", target = "dateOfBirth")
+    Account mapToEntity (AccountDTO accountDTO); //принимает ДТО и превращает в ентити
 
     @IterableMapping(qualifiedByName ="toDTO")
     List<AccountDTO> toDTOList(List<Account> accountList);
